@@ -14,4 +14,14 @@ class CheckUpLogsModel extends Model
     {
         return $this->where('id', $id)->first();
     }
+
+    public function getLatestData($userId)
+    {
+        return $this->select('check_up_logs.*, icds.code AS icd_code, icds.name_en AS icd_name')
+            ->join('icds', 'icds.id = check_up_logs.icd_id', 'left')
+            ->where('check_up_logs.user_id', $userId)
+            ->orderBy('check_up_logs.date', 'DESC')
+            ->limit(4)
+            ->find();
+    }
 }

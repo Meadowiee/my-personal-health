@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
   <script src="<?= base_url('assets/js/bootstrap.bundle.min.js') ?>"></script>
 
-
   <link rel="icon" href="<?= base_url('assets/images/favicon.svg') ?>" type="image/x-icon">
   <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>" id="main-style-link">
   <link rel="stylesheet" href="<?= base_url('assets/fonts/tabler-icons.min.css') ?>">
@@ -21,19 +20,15 @@
 </head>
 
 <body data-pc-preset="preset-1" data-pc-direction="ltr" data-pc-theme="light">
-  <!-- [ Pre-loader ] start -->
   <div class="loader-bg">
     <div class="loader-track">
       <div class="loader-fill"></div>
     </div>
   </div>
-  <!-- [ Pre-loader ] End -->
-  <!-- [ Sidebar Menu ] start -->
   <nav class="pc-sidebar">
     <div class="navbar-wrapper">
       <div class="m-header">
         <a href="<?= base_url('/') ?>" class="b-brand text-primary d-flex align-items-center justify-content-center gap-3">
-          <!-- ========   Change your logo from here   ============ -->
           <img src="<?= base_url('assets/images/medical.png') ?>" class="img-fluid logo-lg" style="max-height: 35px;" alt="logo">
           <h4 class="mt-2" style="color: #6dcfc6;">Health<span style="color: #cae44b;">Life</span></h4>
         </a>
@@ -42,54 +37,45 @@
         <ul class="pc-navbar flex-column d-flex">
           <li class="pc-item">
             <a href="<?= base_url('/') ?>" class="pc-link">
-              <span class="pc-micon"><i class="ti ti-dashboard"></i></span>
+              <span class="pc-micon mb-1"><i class="ti ti-dashboard"></i></span>
               <span class="pc-mtext">Dashboard</span>
             </a>
           </li>
-
           <li class="pc-item pc-caption">
             <label>Health Record</label>
             <i class="ti ti-dashboard"></i>
           </li>
           <li class="pc-item">
             <a href="<?= base_url('/checkup') ?>" class="pc-link">
-              <span class="pc-micon"><i class="ti ti-report-medical"></i></span>
+              <span class="pc-micon mb-1"><i class="ti ti-report-medical"></i></span>
               <span class="pc-mtext">Check-Up Logs</span>
             </a>
           </li>
           <li class="pc-item">
-            <a href="../elements/bc_color.html" class="pc-link">
-              <span class="pc-micon"><i class="ti ti-plant-2"></i></span>
+            <a href="<?= base_url('/logs') ?>" class="pc-link">
+              <span class="pc-micon mb-1"><i class="ti ti-plant-2"></i></span>
               <span class="pc-mtext">Personal Logs</span>
             </a>
           </li>
-
-          <!-- This part is optional -->
-          <li class="pc-item pc-caption">
-            <label>Emergency</label>
-            <i class="ti ti-news"></i>
-          </li>
           <li class="pc-item">
-            <a href="../pages/login.html" class="pc-link">
-              <span class="pc-micon"><i class="ti ti-scan"></i></span>
-              <span class="pc-mtext">QR Card</span>
+            <a href="<?= base_url('/linkedfiles') ?>" class="pc-link">
+              <span class="pc-micon mb-1"><i class="ti ti-paperclip"></i></span>
+              <span class="pc-mtext">Linked Files</span>
             </a>
           </li>
-
-          <!-- This part is optional -->
           <li class="pc-item pc-caption">
             <label>Account</label>
             <i class="ti ti-user"></i>
           </li>
           <li class="pc-item">
             <a href="<?= base_url('/user') ?>" class="pc-link">
-              <span class="pc-micon"><i class="ti ti-user"></i></span>
+              <span class="pc-micon mb-1"><i class="ti ti-user"></i></span>
               <span class="pc-mtext">Profile</span>
             </a>
           </li>
           <li class="pc-item mt-auto">
             <a class="pc-link" href="<?= base_url('/logout') ?>">
-              <span class="pc-micon"><i class="ti ti-logout"></i></span>
+              <span class="pc-micon mb-1"><i class="ti ti-logout"></i></span>
               <span class="pc-mtext">Logout</span>
             </a>
           </li>
@@ -97,12 +83,10 @@
       </div>
     </div>
   </nav>
-  <!-- [ Sidebar Menu ] end --> <!-- [ Header Topbar ] start -->
   <header class="pc-header">
-    <div class="header-wrapper"> <!-- [Mobile Media Block] start -->
+    <div class="header-wrapper">
       <div class="me-auto pc-mob-drp">
         <ul class="list-unstyled">
-          <!-- ======= Menu collapse Icon ===== -->
           <li class="pc-h-item pc-sidebar-collapse">
             <a href="#" class="pc-head-link ms-0" id="sidebar-hide">
               <i class="ti ti-menu-2"></i>
@@ -117,20 +101,15 @@
       </div>
     </div>
   </header>
-  <!-- [ Header ] end -->
 
-
-
-  <!-- [ Main Content ] start -->
   <div class="pc-container">
     <div class="pc-content">
-      <!-- [ breadcrumb ] start -->
       <div class="page-header">
         <div class="page-block">
           <div class="row align-items-center">
             <div class="col-md-12">
               <ul class="breadcrumb">
-                <?php if ($title !== 'Dashboard'): ?>
+                <?php if ($title !== 'Emergency'): ?>
                   <li class="breadcrumb-item"><a href="<?= base_url('/') ?>">Home</a></li>
                 <?php endif; ?>
                 <?php if (!empty($parent)): ?>
@@ -142,22 +121,18 @@
           </div>
         </div>
       </div>
-      <!-- [ breadcrumb ] end -->
-
-      <!-- [ Main Content ] start -->
       <h2><?php if (!empty($title)) echo $title; ?></h2>
       <div class="mt-3">
         <?php if (!empty($content)) echo view($content) ?>
       </div>
-      <!-- [ Main Content ] end -->
     </div>
   </div>
-  <!-- [ Main Content ] end -->
+
   <footer class="pc-footer">
     <div class="footer-wrapper container-fluid">
       <div class="row">
         <div class="col-sm my-1">
-          <p class="m-0">This project were made as an assignment</p>
+          <p class="m-0">This project were made as final test assignment @shafinaardelia</p>
         </div>
         <div class="col-auto my-1">
           <ul class="list-inline footer-link mb-0">
@@ -166,7 +141,7 @@
         </div>
       </div>
     </div>
-  </footer> <!-- Required Js -->
+  </footer>
   <script src="<?= base_url('assets/js/plugins/popper.min.js') ?>"></script>
   <script src="<?= base_url('assets/js/plugins/simplebar.min.js') ?>"></script>
   <script src="<?= base_url('assets/js/plugins/bootstrap.min.js') ?>"></script>

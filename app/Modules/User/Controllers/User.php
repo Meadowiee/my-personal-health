@@ -33,19 +33,43 @@ class User extends ResourceController
         if ($data) return $this->respond($data);
         return $this->failNotFound('User dengan ID tersebut tidak ditemukan');
     }
-
+    
     public function create()
     {
         $data = $this->request->getJSON(true);
+        $validationRules = [
+            'name'              => 'required|min_length[3]',
+            'date_of_birth'     => 'permit_empty|valid_date',
+            'blood_type'        => 'permit_empty|max_length[2]',
+            'gender'            => 'permit_empty',
+            'no_bpjs'           => 'permit_empty',
+            'diagnose'          => 'permit_empty',
+            'allergy'           => 'permit_empty',
+        ];
+        if (!$this->validate($validationRules)) {
+            return redirect()->back()->withInput()->with('validation', $this->validator);
+        }
         if ($this->model->insert($data)) {
             return $this->respondCreated($data);
         }
         return $this->failValidationErrors('Gagal menambahkan data');
     }
-
+    
     public function update($id = null)
     {
         $data = $this->request->getPost();
+        $validationRules = [
+            'name'              => 'required|min_length[3]',
+            'date_of_birth'     => 'permit_empty|valid_date',
+            'blood_type'        => 'permit_empty|max_length[2]',
+            'gender'            => 'permit_empty',
+            'no_bpjs'           => 'permit_empty',
+            'diagnose'          => 'permit_empty',
+            'allergy'           => 'permit_empty',
+        ];
+        if (!$this->validate($validationRules)) {
+            return redirect()->back()->withInput()->with('validation', $this->validator);
+        }
         if ($this->model->update($id, $data)) {
             return redirect()->to('/user')->with('success', 'Profile updated!');
         }

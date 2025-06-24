@@ -47,9 +47,10 @@
                         <?php if (!empty($getData['related_files'])) {
                             $files = json_decode($getData['related_files'], true);
                             foreach ($files as $file) { ?>
-                                <a href="<?= base_url('uploads/' . $file) ?>" target="_blank">Click to see your current file</a><br>
+                                <a href="<?= base_url('uploads/checkup/' . $file) ?>" target="_blank">Click to see your current file</a><br>
                         <?php };
                         } else {?>
+                            <p class="text-secondary">There are no related file at the moment</p>
                         <?php } ?>
                     </div>
                 </div>
