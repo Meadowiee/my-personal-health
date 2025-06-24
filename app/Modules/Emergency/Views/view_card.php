@@ -32,12 +32,17 @@
                         <tr>
                             <td>Diagnose</td>
                             <td>
-                                <?php foreach ($icds as $icd) { ?>
+                                <?php 
+                                    if(!empty($icds)) {
+                                    foreach ($icds as $icd) { ?>
                                     <span class="badge bg-info rounded-2 cursor-pointer"
                                         data-bs-toggle="tooltip"
                                         title="<?= $icd['name'] ?>">
                                         <?= $icd['code'] ?>
                                     </span>
+                                <?php } 
+                                    } else { ?>
+                                        -
                                 <?php } ?>
                             </td>
                         </tr>
@@ -51,19 +56,24 @@
             <div class="col-lg-6 col-sm-12 mb-3">
                 <h4 class="mb-3"><i class="bi bi-heart-pulse me-2"></i>Check-Up Logs</h4>
                 <div class="row">
-                    <?php foreach ($checkup as $log): ?>
-                    <div class="col-lg-12 col-xl-6 col-md-6 mb-0">
-                        <div class="card h-75 rounded-3 p-3">
-                            <div class="d-flex justify-content-between">
-                                <div class="">
-                                    <h5 class="mb-1 text-truncate cursor-pointer" data-bs-toggle="tooltip" title="<?= $log['doctor'] ?>, <?= $log['hospital_clinic']?>"><?= $log['symptoms']?></h5>
-                                    <p>Treatment : <?= $log['treatment']?></p>
+                    <?php 
+                        if(!empty($checkup)) {
+                        foreach ($checkup as $log){ ?>
+                        <div class="col-lg-12 col-xl-6 col-md-6 mb-0">
+                            <div class="card h-75 rounded-3 p-3">
+                                <div class="d-flex justify-content-between">
+                                    <div class="">
+                                        <h5 class="mb-1 text-truncate cursor-pointer" data-bs-toggle="tooltip" title="<?= $log['doctor'] ?>, <?= $log['hospital_clinic']?>"><?= $log['symptoms']?></h5>
+                                        <p>Treatment : <?= $log['treatment']?></p>
+                                    </div>
+                                    <p class="text-secondary small flex-shrink-0"><?= $log['date']?></p>
                                 </div>
-                                <p class="text-secondary small flex-shrink-0"><?= $log['date']?></p>
                             </div>
                         </div>
-                    </div>
-                    <?php endforeach; ?>
+                    <?php } 
+                        } else { ?>
+                        <div class="text-secondary">There are no check-up logs data at the moment</div>
+                    <?php } ?>
                 </div>
             </div>
         </div>

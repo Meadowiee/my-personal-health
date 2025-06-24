@@ -41,6 +41,18 @@
               <span class="pc-mtext">Dashboard</span>
             </a>
           </li>
+          <?php if(!!session()->get('is_admin')) { ?>
+            <li class="pc-item pc-caption">
+              <label>Management</label>
+              <i class="ti ti-person"></i>
+            </li>
+            <li class="pc-item">
+              <a href="<?= base_url('/user') ?>" class="pc-link">
+                <span class="pc-micon mb-1"><i class="ti ti-users"></i></span>
+                <span class="pc-mtext">User Management</span>
+              </a>
+            </li>
+          <?php } ?>
           <li class="pc-item pc-caption">
             <label>Health Record</label>
             <i class="ti ti-dashboard"></i>
@@ -68,7 +80,7 @@
             <i class="ti ti-user"></i>
           </li>
           <li class="pc-item">
-            <a href="<?= base_url('/user') ?>" class="pc-link">
+            <a href="<?= base_url('/profile') ?>" class="pc-link">
               <span class="pc-micon mb-1"><i class="ti ti-user"></i></span>
               <span class="pc-mtext">Profile</span>
             </a>

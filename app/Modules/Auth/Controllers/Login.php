@@ -23,9 +23,10 @@ class Login extends BaseController
 
         if ($user && password_verify($password, $user['password'])) {
             $sessdata = [
-                'user_id' => $user['id'],
-                'username' => $user['username'],
+                'user_id'   => $user['id'],
+                'username'  => $user['username'],
                 'logged_in' => TRUE,
+                'is_admin'  => (bool) $user['is_admin']
             ];
             $session->set($sessdata);
             return redirect()->to('/');

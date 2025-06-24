@@ -58,7 +58,7 @@ class CheckUp extends BaseController
             'parent_url'    => '/checkup',
             'getData'       => ['date' => date('Y-m-d')],
             'icds'          => $icds,
-            'isEdit'        => true,
+            'isEdit'        => false,
         ];
         return view('view_default', $data);
     }
@@ -92,7 +92,7 @@ class CheckUp extends BaseController
             'hospital_clinic' => 'required',
             'symptoms'        => 'required',
             'date'            => 'required|valid_date',
-            'icd_id'          => 'permit_empty|numeric',
+            'icd_id'          => 'required|numeric',
             'treatment'       => 'required',
             'notes'           => 'permit_empty',
             'related_files'   => 'permit_empty|max_size[related_files,2048]|ext_in[related_files,jpg,jpeg,png,pdf,docx]',
@@ -124,7 +124,7 @@ class CheckUp extends BaseController
             'hospital_clinic' => 'required',
             'symptoms'        => 'required',
             'date'            => 'required|valid_date',
-            'icd_id'          => 'permit_empty|numeric',
+            'icd_id'          => 'required|numeric',
             'treatment'       => 'required',
             'notes'           => 'permit_empty',
             'related_files'   => 'permit_empty|max_size[related_files,2048]|ext_in[related_files,jpg,jpeg,png,pdf,docx]',

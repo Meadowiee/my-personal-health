@@ -34,7 +34,7 @@
                 <div class="invalid-feedback"><?= str_replace('hospital_clinic', 'hospital / clinic', $validation?->getError('hospital_clinic') ?? '') ?></div>
             </div>
             <div class="col-md-6 mb-3">
-                <h6>ICD-10</h6>
+                <h6>ICD-10 <span class="text-danger">*</span></h6>
                 <select name="icd_id" class="form-select <?= $validation && $validation->hasError('icd_id') ? 'is-invalid' : '' ?>">
                     <option value="">-- Select ICD --</option>
                     <?php foreach ($icds as $icd): ?>
@@ -43,7 +43,7 @@
                         </option>
                     <?php endforeach; ?>
                 </select>
-                <div class="invalid-feedback"><?= $validation?->getError('icd_id') ?></div>
+                <div class="invalid-feedback"><?= str_replace('icd_id', 'ICD-10', $validation?->getError('icd_id') ?? '') ?></div>
             </div>
             <div class="col-md-6 mb-3">
                 <h6>Symptoms <span class="text-danger">*</span></h6>

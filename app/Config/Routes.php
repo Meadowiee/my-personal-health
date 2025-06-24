@@ -17,10 +17,20 @@ $routes->group('signup', static function($routes) {
     $routes->post('auth', '\App\Modules\Auth\Controllers\Signup::auth');
 });
 
+$routes->group('profile', ['namespace' => 'App\Modules\Profile\Controllers'], function($routes) {
+    $routes->get('edit', 'Profile::edit');
+    $routes->post('update/(:num)', 'Profile::update/$1');
+    $routes->resource('', ['controller' => 'Profile']);
+});
+
 $routes->group('user', ['namespace' => 'App\Modules\User\Controllers'], function($routes) {
-    $routes->get('edit', 'User::edit');
+    $routes->get('', 'User::index');
+    $routes->get('add', 'User::add');
+    $routes->get('show/(:num)', 'User::show/$1');
+    $routes->get('edit/(:num)', 'User::edit/$1');
+    $routes->get('delete/(:num)', 'User::delete/$1');
+    $routes->post('create', 'User::create');
     $routes->post('update/(:num)', 'User::update/$1');
-    $routes->resource('', ['controller' => 'User']);
 });
 
 $routes->group('checkup', ['namespace' => 'App\Modules\CheckUp\Controllers'], function($routes) {

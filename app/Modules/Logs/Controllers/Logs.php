@@ -52,7 +52,7 @@ class Logs extends BaseController
             'parent'        => 'Personal Log',
             'parent_url'    => '/logs',
             'getData'       => ['date' => date('Y-m-d')],
-            'isEdit'        => true,
+            'isEdit'        => false,
         ];
         return view('view_default', $data);
     }
