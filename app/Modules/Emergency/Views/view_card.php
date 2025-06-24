@@ -37,7 +37,7 @@
                                     foreach ($icds as $icd) { ?>
                                     <span class="badge bg-info rounded-2 cursor-pointer"
                                         data-bs-toggle="tooltip"
-                                        title="<?= $icd['name'] ?>">
+                                        title="<?= $icd['name'] . '; ' . $icd['name_id']?>">
                                         <?= $icd['code'] ?>
                                     </span>
                                 <?php } 
@@ -48,7 +48,7 @@
                         </tr>
                         <tr>
                             <td>Allergy</td>
-                            <td class="text-capitalize"><?= $data['allergy'] ?? '-' ?></td>
+                            <td class="text-capitalize"><?= !empty($data['allergy']) ? $data['allergy'] : '-' ?></td>
                         </tr>
                     </tbody>
                 </table>

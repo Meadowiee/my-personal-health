@@ -23,7 +23,7 @@ class Signup extends BaseController
 
         $existingUser = $model->where('username', $this->request->getPost('username'))->first();
         if ($existingUser) {
-            $data = ['error' => 'Username sudah digunakan.'];
+            $data = ['error' => 'Username sudah digunakan'];
             return view('\App\Modules\Auth\Views\signup', $data);
         }
         

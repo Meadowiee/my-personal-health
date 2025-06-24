@@ -28,18 +28,18 @@
                 <div class="mb-3">
                     <h6>Gender</h6>
                     <select name="gender" id="gender" class="form-select text-capitalize <?= $validation && $validation->hasError('gender') ? 'is-invalid' : '' ?>">
-                        <option value="">-- Pilih Jenis Kelamin --</option>
-                        <option value="Laki-laki" <?= old('gender', $getData['gender'] ?? '') === 'Laki-laki' ? 'selected' : '' ?>>Laki-laki</option>
-                        <option value="Perempuan" <?= old('gender', $getData['gender'] ?? '') === 'Perempuan' ? 'selected' : '' ?>>Perempuan</option>
+                        <option value="">-- Select the gender --</option>
+                        <option value="man" <?= old('gender', $getData['gender'] ?? '') === 'man' ? 'selected' : '' ?>>Man</option>
+                        <option value="woman" <?= old('gender', $getData['gender'] ?? '') === 'woman' ? 'selected' : '' ?>>Woman</option>
                     </select>
                     <div class="invalid-feedback"><?= $validation?->getError('gender') ?></div>
                 </div>
                 <div class="mb-3">
                     <h6>Role</h6>
                     <select name="is_admin" id="is_admin" class="form-select text-capitalize <?= $validation && $validation->hasError('is_admin') ? 'is-invalid' : '' ?>">
-                        <option value="">-- Pilih role --</option>
-                        <option value="Admin" <?= old('is_admin', (bool) $getData['is_admin'] ?? '') === true ? 'selected' : '' ?>>Admin</option>
-                        <option value="User" <?= old('is_admin', (bool) $getData['is_admin'] ?? '') === false ? 'selected' : '' ?>>User</option>
+                        <option value="">-- Select the role --</option>
+                        <option value="1" <?= old('is_admin', (bool) $getData['is_admin'] ?? '') === true ? 'selected' : '' ?>>Admin</option>
+                        <option value="0" <?= old('is_admin', (bool) $getData['is_admin'] ?? '') === false ? 'selected' : '' ?>>User</option>
                     </select>
                     <div class="invalid-feedback"><?= str_replace('is_admin', 'role', $validation?->getError('is_admin') ?? '') ?></div>
                 </div>

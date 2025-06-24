@@ -20,8 +20,9 @@ class Emergency extends BaseController
         $icds = [];
         foreach ($getCheckup as $log) {
             $icds[] = [
-                'code'  => $log['icd_code'],
-                'name'  => $log['icd_name'],
+                'code'      => $log['icd_code'],
+                'name'      => $log['icd_name'],
+                'name_id'   => $log['icd_name_id'],
             ];
         };
 

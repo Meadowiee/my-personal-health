@@ -144,12 +144,7 @@
     <div class="footer-wrapper container-fluid">
       <div class="row">
         <div class="col-sm my-1">
-          <p class="m-0">This project were made as final test assignment @shafinaardelia</p>
-        </div>
-        <div class="col-auto my-1">
-          <ul class="list-inline footer-link mb-0">
-            <li class="list-inline-item"><a href="<?= base_url('/') ?>">Home</a></li>
-          </ul>
+          <p class="m-0 text-secondary">This project were made by Shafina Ardelia</p>
         </div>
       </div>
     </div>

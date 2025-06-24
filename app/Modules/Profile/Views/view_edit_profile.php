@@ -25,9 +25,9 @@
                 <div class="mb-3">
                     <h6>Gender</h6>
                     <select name="gender" id="gender" class="form-select text-capitalize <?= $validation && $validation->hasError('gender') ? 'is-invalid' : '' ?>">
-                        <option value="">-- Pilih Jenis Kelamin --</option>
-                        <option value="Laki-laki" <?= old('gender', $getData['gender'] ?? '') === 'Laki-laki' ? 'selected' : '' ?>>Laki-laki</option>
-                        <option value="Perempuan" <?= old('gender', $getData['gender'] ?? '') === 'Perempuan' ? 'selected' : '' ?>>Perempuan</option>
+                        <option value="">-- Select the gender --</option>
+                        <option value="man" <?= old('gender', $getData['gender'] ?? '') === 'man' ? 'selected' : '' ?>>Man</option>
+                        <option value="woman" <?= old('gender', $getData['gender'] ?? '') === 'woman' ? 'selected' : '' ?>>Woman</option>
                     </select>
                     <div class="invalid-feedback"><?= $validation?->getError('gender') ?></div>
                 </div>

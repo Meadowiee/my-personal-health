@@ -34,11 +34,15 @@
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
                                     <?= form_open('signup/auth', ['id' => 'form-signup']) ?>
-                                    <?php if(!empty($data)) echo $data; ?>
                                     <div class="d-flex align-items-center gap-3 mb-3 pb-1">
                                         <img src="<?= base_url('assets/images/medical.png') ?>" class="img-fluid logo-lg" style="max-height: 45px;" alt="logo">
                                         <h1 class="mt-2" style="color: #6dcfc6;">Health<span style="color: #cae44b;">Life</span></h1>
                                     </div>
+                                    <?php if (!empty($error)) { ?>
+                                        <div class="alert alert-warning d-flex align-items-center" style="height:40px;" role="alert">
+                                            <?= $error ?>
+                                        </div>
+                                    <?php } ?>
                                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Register your account</h5>
                                     <div data-mdb-input-init class="form-outline mb-4">
                                         <input type="text" name="username" for="username" placeholder="Username" class="form-control form-control-lg" required />

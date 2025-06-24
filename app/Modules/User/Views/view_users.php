@@ -16,7 +16,7 @@
                 <th class="text-center">No</th>
                 <th>Username</th>
                 <th>Name</th>
-                <th>BPJS No.</th>
+                <th>No BPJS</th>
                 <th>Role</th>
                 <th>Action</th>
             </thead>

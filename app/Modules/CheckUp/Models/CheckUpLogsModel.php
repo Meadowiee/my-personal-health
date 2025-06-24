@@ -17,7 +17,7 @@ class CheckUpLogsModel extends Model
 
     public function getLatestData($userId)
     {
-        return $this->select('check_up_logs.*, icds.code AS icd_code, icds.name_en AS icd_name')
+        return $this->select('check_up_logs.*, icds.code AS icd_code, icds.name_en AS icd_name, icds.name_id AS icd_name_id')
             ->join('icds', 'icds.id = check_up_logs.icd_id', 'left')
             ->where('check_up_logs.user_id', $userId)
             ->orderBy('check_up_logs.date', 'DESC')

@@ -8,8 +8,8 @@
             <?php foreach ($files as $file): ?>
                 <div class="col">
                     <div class="card h-60 rounded-3 m-1">
-                        <img class="card-img-top"
-                            src="<?= $file['isImage'] ? $file['path'] : base_url('uploads/general/placeholder.jpg') ?>"
+                        <img class="card-img-top <?= !$file['isImage'] ? 'w-50 mx-auto' : '' ?>"
+                            src="<?= $file['isImage'] ? $file['path'] : base_url('uploads/general/files.jpg') ?>"
                             alt="Card image"
                             style="height: 140px; object-fit: cover; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem;">
                         <a class="card-body p-2 m-2" href="<?= $file['path'] ?>" target="_blank">
