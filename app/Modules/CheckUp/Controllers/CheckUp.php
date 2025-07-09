@@ -38,7 +38,7 @@ class CheckUp extends BaseController
         $data = [
             'title'         => 'View Check-Up Log',
             'content'       => 'App\Modules\CheckUp\Views\view_my_checkup',
-            'parent'        => 'Check-Up Log',
+            'parent'        => 'Check-Up Logs',
             'parent_url'    => '/checkup',
             'getData'       => $getData,
             'icds'          => $icds,
@@ -54,7 +54,7 @@ class CheckUp extends BaseController
         $data = [
             'title'         => 'Create Check-Up Log',
             'content'       => 'App\Modules\CheckUp\Views\view_edit_checkup',
-            'parent'        => 'Check-Up Log',
+            'parent'        => 'Check-Up Logs',
             'parent_url'    => '/checkup',
             'getData'       => ['date' => date('Y-m-d')],
             'icds'          => $icds,
@@ -73,7 +73,7 @@ class CheckUp extends BaseController
         $data = [
             'title'         => 'Edit Check-Up Log',
             'content'       => 'App\Modules\CheckUp\Views\view_edit_checkup',
-            'parent'        => 'Check-Up Log',
+            'parent'        => 'Check-Up Logs',
             'parent_url'    => '/checkup',
             'getData'       => $getData,
             'icds'          => $icds,

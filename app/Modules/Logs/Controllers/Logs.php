@@ -35,7 +35,7 @@ class Logs extends BaseController
         $data = [
             'title'         => 'View Personal Log',
             'content'       => 'App\Modules\logs\Views\view_my_logs',
-            'parent'        => 'Personal Log',
+            'parent'        => 'Personal Logs',
             'parent_url'    => '/logs',
             'getData'       => $getData,
         ];
@@ -49,7 +49,7 @@ class Logs extends BaseController
         $data = [
             'title'         => 'Create Personal Log',
             'content'       => 'App\Modules\logs\Views\view_edit_logs',
-            'parent'        => 'Personal Log',
+            'parent'        => 'Personal Logs',
             'parent_url'    => '/logs',
             'getData'       => ['date' => date('Y-m-d')],
             'isEdit'        => false,
